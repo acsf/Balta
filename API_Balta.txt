@@ -1,0 +1,30 @@
+//Criando um projeto WEB
+1-dotnet new web -o Projeto_API -f net5.0
+//Adicionando um framework ORM ao projeto
+2-dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 5.0.13 
+(versão compatível com net5)
+//Adicionando o recurso design do entityframeworkcore
+3-dotnet add package microsoft.entityframeworkcore.design --version 5.0.13
+4-Criar a pasta Models e dentro dela uma classe modelo
+5-Criar a pasta Data e dentro dela configurar a classe DbContext
+
+//Utilizando o entity framework
+--Antes de utilizar o entity, é preciso instalar as ferramentas de linha de comando
+6-dotnet tool install --global dotnet-ef --version 5.0.13
+//Adicionando uma migração
+7-dotnet ef migrations add InitialCriations
+//Atualizando o modelo de dados
+8-dotnet ef database update
+//Removendo uma migração
+9-dotnet ef migrations remove --force (só funciona com o force)
+9.1-Remove-Migration -Force (No Visual Studio)
+
+//CRUD
+10-Criado a pasta controller, e uma classe controller
+11-Adicionado as Annotations ao controller
+12-Na classe startup, no metodo ConfigureServices adiciono o serviço AddControllers
+12.1-No metodo UseEndpoints adiciono a rota padrão com MapControllerRoute
+
+
+
+
